@@ -29,3 +29,8 @@ export function updateAmountSuccess(id, amount) {
         amount
     };
 }
+export function clearCart() {
+    return {
+        type: '@cart/CLEAR',
+    };
+}

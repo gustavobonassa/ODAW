@@ -30,9 +30,9 @@ function Dashboard(props) {
     const [image, setImage] = React.useState("");
     const [amount, setAmount] = React.useState("");
     const user = useSelector(state => state.user);
-    // if (!user.token) {
-    //     history.push("/login");
-    // }
+    if (!user.token) {
+        history.push("/login");
+    }
     async function getAllProducts() {
         const response = await api.get('products');
 

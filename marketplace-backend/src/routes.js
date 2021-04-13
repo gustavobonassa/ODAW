@@ -15,6 +15,8 @@ routes.post('/sessions', validate(validators.Session), handle(controllers.Sessio
 routes.get('/products', handle(controllers.ProductController.index))
 routes.get('/products/:id', handle(controllers.ProductController.show))
 
+routes.post('/purchases', validate(validators.Purchase), handle(controllers.PurchaseController.store))
+
 routes.use(authMiddleware) //a partir daqui precisa estar autenticado
 /*
  * Ads
@@ -26,7 +28,6 @@ routes.delete('/products/:id', handle(controllers.ProductController.destroy))
 /*
  * Purchases
  */
-routes.post('/purchases', validate(validators.Purchase), handle(controllers.PurchaseController.store))
 routes.get('/purchases', handle(controllers.PurchaseController.index))
 
 module.exports = routes;

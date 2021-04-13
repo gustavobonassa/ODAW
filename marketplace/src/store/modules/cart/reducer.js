@@ -17,6 +17,10 @@ export default function cart(state = [], action) {
                     draft.splice(productIndex, 1)
                 }
             });
+        case '@cart/CLEAR':
+            return produce(state, draft => {
+                draft.splice(0, draft.length)
+            });
         case '@cart/UPDATE_AMOUNT_SUCCESS': {
             return produce(state, draft => {
                 const productIndex = draft.findIndex(p => p._id === action.id);

@@ -85,7 +85,7 @@ export const Total = styled.div`
     }
 `;
 
-export const EmptyCart = styled.div`
+export const Success = styled.div`
     width: 100%;
     text-align: center;
     display: flex;
